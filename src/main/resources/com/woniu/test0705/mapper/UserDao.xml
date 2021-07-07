@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniu.test0705.mapper.UserDao">
+
+    <select id="userList" resultType="com.woniu.test0705.entity.User" parameterType="com.woniu.test0705.entity.User">
+        select * from user;
+    </select>
+
+    <select id="findOne" resultType="com.woniu.test0705.entity.User" parameterType="com.woniu.test0705.entity.User">
+        select * from user where uid=#{uid};
+    </select>
+
+    <insert id="addUser">
+        insert into user(uname,upwd) values(#{uname},#{upwd})
+    </insert>
+
+    <update id="updateUser" parameterType="com.woniu.test0705.entity.User">
+        update user set uname='haha1',upwd=#{upwd} where uid=#{uid}
+    </update>
+
+    <update id="update">
+        update user set uname=#{uname},upwd=#{upwd} where uid=#{uid}
+    </update>
+
+</mapper>
