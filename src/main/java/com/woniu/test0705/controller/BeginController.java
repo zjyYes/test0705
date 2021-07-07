@@ -43,6 +43,8 @@ public class BeginController {
     @GetMapping("/addUser/{uname}/{upwd}")
     public Map<Object, Object> addUser(@PathVariable String uname,@PathVariable String upwd){
         Map<Object, Object> map = new HashMap<>();
+        System.out.println("BeginController.addUser");
+        System.out.println("BeginController.addUser");
         try {
             User user = new User();
             user.setUname(uname);
